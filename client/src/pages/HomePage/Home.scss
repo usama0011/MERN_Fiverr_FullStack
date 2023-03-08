@@ -1,0 +1,215 @@
+.home {
+  .features {
+    background-color: #f1fdf7;
+
+    padding: 100px 50px;
+
+    .container {
+      max-width: 1400px;
+      margin: 0px auto;
+      display: flex;
+      padding: 0px 10px;
+      align-items: center;
+      gap: 200px;
+      .itemone {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex: 2;
+        img {
+          width: 100%;
+        }
+        h1 {
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+        .title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-weight: 500;
+          font-size: 18px;
+          color: #666;
+          .checkIcon {
+            width: 22px;
+            height: 22px;
+            color: #0faa95;
+          }
+        }
+        p {
+          font-size: 18px;
+          font-weight: 300;
+          color: gray;
+          line-height: 28px;
+          letter-spacing: 1px;
+        }
+      }
+      .itemtwo {
+        flex: 1.5;
+        width: 100%;
+        height: 350px;
+        .video {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    //   &.reverse {
+    //     background-color: #0d084d;
+    //     color: white;
+    //     .container {
+    //       flex-direction: row-reverse;
+    //     }
+    //   }
+  }
+
+  .explore {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0px;
+
+    .container {
+      width: 1400px;
+
+      h1 {
+        color: #555;
+      }
+
+      .items {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .item {
+          width: 250px;
+          height: 150px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          cursor: pointer;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+
+          .line {
+            width: 50px;
+            height: 2px;
+            background-color: lightgray;
+            transition: all 0.3s ease;
+          }
+
+          span {
+            font-weight: 300;
+          }
+
+          &:hover {
+            .line {
+              width: 80px;
+              background-color: #1dbf73;
+            }
+          }
+        }
+      }
+    }
+  }
+  .dark {
+    background-color: #0d084d;
+    .container {
+      display: flex;
+      max-width: 1400px;
+      margin: 0px auto;
+      align-items: center;
+      gap: 50px;
+      padding: 100px 50px;
+      .itemone {
+        flex: 2;
+        h1 {
+          color: white !important;
+          margin-bottom: 20px;
+        }
+
+        i {
+          font-weight: 300;
+        }
+
+        p {
+          margin-bottom: 20px;
+          line-height: 25px;
+          color: white !important;
+        }
+
+        .title {
+          color: white !important;
+          font-weight: 300 !important;
+          font-size: 14px !important;
+          display: flex;
+          margin-bottom: 15px;
+          align-items: center;
+          .checkIcon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            color: #0faa95;
+          }
+        }
+      }
+      .itemtwo {
+        flex: 3;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    button {
+      background-color: #1dbf73;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      width: max-content;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  }
+}
+@media (max-width: 957px) {
+  .home {
+    .features {
+      .container {
+        display: flex;
+        flex-direction: column;
+        .itemtwo {
+          .video {
+            height: 400px;
+          }
+        }
+      }
+    }
+    .dark {
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .home {
+    .explore {
+      .container {
+        padding: 20px;
+        
+      }
+    }
+  }
+}
