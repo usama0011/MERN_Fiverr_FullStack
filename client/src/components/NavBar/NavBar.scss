@@ -24,13 +24,35 @@
     display: flex;
     width: 100%;
     align-items: center;
+    position: relative;
     justify-content: space-between;
     margin: 0px auto;
     padding: 20px 30px;
-
+    .smallList {
+      position: fixed;
+      top: 79px;
+      width: 270px;
+      height: 100vh;
+      background-color: white;
+      color: black;
+      left: 0;
+      transform: translateX(-100vw);
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
     .logo {
       font-size: 34px;
+      display: flex;
+      align-items: center;
       font-weight: bold;
+      .menuIcon {
+        .barIcon {
+          width: 30px;
+          display: none;
+          margin-right: 10px;
+          height: 30px;
+        }
+      }
       .dot {
         font-weight: bold;
         color: #1dbf73;
@@ -115,17 +137,76 @@
     font-family: "Montserrat", sans-serif;
   }
   @media (max-width: 613px) {
-    .container {
-      .links {
-        .h {
-          display: none;
+    &.active {
+      .container {
+        .smallList {
+          display: flex;
+          flex-direction: column;
+          padding: 50px 20px;
+
+          .btn {
+            border: none;
+            outline: none;
+            padding: 15px 0px;
+            border-radius: 5px;
+            background-color: #013914;
+            color: white;
+            cursor: pointer;
+            a {
+              color: inherit;
+              text-decoration: none;
+            }
+            margin-top: 30px;
+          }
+          .closeIcon {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            .xIcon {
+              width: 30px;
+              height: 30px;
+              color: black;
+              cursor: pointer;
+            }
+          }
+          span {
+            margin-bottom: 20px;
+          }
+          &.active {
+            transform: translateX(0);
+          }
+        }
+        .logo {
+          .menuIcon {
+            .barIcon {
+              display: block;
+            }
+          }
+        }
+        .links {
+          .h {
+            display: none;
+          }
         }
       }
     }
   }
   @media (max-width: 1156px) {
-    .menu{
+    .menu {
       display: none;
+    }
+  }
+}
+@media (max-width: 493px) {
+  .navbar {
+    &.active {
+      .container {
+        .links {
+          span {
+            display: none;
+          }
+        }
+      }
     }
   }
 }

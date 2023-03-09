@@ -74,7 +74,6 @@ const SignUp = () => {
             placeholder="Pakistan"
             onChange={handleChange}
           />
-          <button type="submit">Register</button>
         </div>
         <div className="right">
           <h1>I want to become a seller</h1>
@@ -101,6 +100,7 @@ const SignUp = () => {
             rows="10"
             onChange={handleChange}
           ></textarea>
+          <button type="submit">Register</button>
         </div>
       </form>
     </div>

@@ -1,11 +1,10 @@
 .register {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  
   form {
-    width: 960px;
-    padding: 100px 0px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 100px 20px;
     display: flex;
     gap: 120px;
 
@@ -104,4 +103,13 @@
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+ .register{
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+ } 
 }

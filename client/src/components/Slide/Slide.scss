@@ -6,11 +6,10 @@
   .container {
     max-width: 1400px;
     width: 100%;
-    overflow: hidden;
     margin: 0px auto;
     position: relative;
+    overflow: hidden;
     .sliderContainer {
-      position: relative;
       display: flex;
       transition: all 1s ease;
       z-index: 800;

@@ -1,11 +1,10 @@
 .messages {
-  display: flex;
-  justify-content: center;
 
   .container {
-    width: 1400px;
-    padding: 50px 0px;
-
+    max-width: 1400px;
+    overflow-x: auto;
+    padding: 50px 20px;
+    margin: 0px auto;
     .title {
       display: flex;
       justify-content: space-between;
@@ -22,7 +21,6 @@
 
     table {
       width: 100%;
-
       tr {
         height: 100px;
         th {

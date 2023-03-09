@@ -1,3 +1,4 @@
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../assets/newRequest";
@@ -6,6 +7,7 @@ import "./NavBar.scss";
 function Navbar() {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
+  const [openSideBar, setOpenSideBar] = useState(false);
 
   const { pathname } = useLocation();
 
@@ -33,11 +35,17 @@ function Navbar() {
       console.log(err);
     }
   };
-  console.log(currentUser)
+  console.log(currentUser);
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
       <div className="container">
         <div className="logo">
+          <div className="menuIcon">
+            <Bars3Icon
+              className="barIcon"
+              onClick={() => setOpenSideBar(!openSideBar)}
+            />
+          </div>
           <Link className="link" to="/">
             <span className="text">fiverr</span>
           </Link>
@@ -50,7 +58,13 @@ function Navbar() {
           {!currentUser?.isSeller && <span>Become a Seller</span>}
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
-              <img src={currentUser.img || "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png"} alt="" />
+              <img
+                src={
+                  currentUser.img ||
+                  "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png"
+                }
+                alt=""
+              />
               <span>{currentUser?.username}</span>
               {open && (
                 <div className="options">
@@ -87,6 +101,31 @@ function Navbar() {
             </>
           )}
         </div>
+        {openSideBar ? (
+          <div className={openSideBar ? "smallList active" : "smallList"}>
+            <div className="closeIcon">
+              <XMarkIcon onClick={()=>setOpenSideBar(!openSideBar)} className="xIcon" />
+            </div>
+            <span className="h">Fiverr Business</span>
+            <span className="h">Explore</span>
+            <span className="h">English</span>
+            {!currentUser?.isSeller && <span>Become a Seller</span>}
+            {!currentUser ? (
+              <button className="btn">
+                <Link className="" to="/signup">
+                  Join Now
+                </Link>
+              </button>
+            ) : null}
+             {!currentUser ? (
+              <button className="btn">
+                <Link className="" to="/login">
+                  Login
+                </Link>
+              </button>
+            ) : null}
+          </div>
+        ) : null}
       </div>
       {(active || pathname !== "/") && (
         <>

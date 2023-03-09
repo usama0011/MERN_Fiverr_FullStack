@@ -1,11 +1,10 @@
 .orders {
-  display: flex;
-  justify-content: center;
   color: #555;
 
   .container {
-    width: 1400px;
-    padding: 50px 0px;
+    max-width: 1400px;
+    padding: 50px 20px;
+    margin: 0px auto;
 
     .title {
       display: flex;
@@ -28,12 +27,13 @@
         height: 50px;
         th {
           text-align: left;
+          padding-left: 20px;
         }
         td {
           sup {
             font-size: 12px;
           }
-
+          padding-left: 20px;
           .image {
             width: 50px;
             height: 25px;
